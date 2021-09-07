@@ -1,3 +1,15 @@
+//Autocompiler
+
+
+$color-primary:#7ed56f;
+$color-primary-light: #55c57a;
+$color-primary-dark: #28b485;
+
+$color-grey-dark:#777;
+$color-white: #fff;
+
+
+
 /* Basic Reset */
 *,
 *::after,
@@ -20,7 +32,7 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #777;
+  color: $color-grey-dark;
   padding: 2rem;
   /* Punem un padding in jurul intregului continut in pagina */
   box-sizing: border-box;
@@ -30,7 +42,7 @@ body {
 .header {
   height: 95vh;
   /* At any time the header  HEIGHT should be visible 95% of the viewport.  */
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.6), rgba(40, 180, 133, 0.6)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.6), rgba($color-primary-dark, 0.6)), url(../img/hero.jpg);
   /* We always use background-image when we need a gradient.
   The gradient will be on top being before url */
   background-size: cover;
@@ -67,7 +79,7 @@ body {
 }
 
 .header-primary {
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
   backface-visibility: hidden;
   /* Removes (sometimes) animation unwanted shaking effect */
@@ -176,8 +188,8 @@ body {
 }
 
 .btn--white {
-  background-color: #fff;
-  color: #777;
+  background-color: $color-white;
+  color: $color-grey-dark;
 }
 
 .btn:hover {
