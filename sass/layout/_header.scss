@@ -1,0 +1,72 @@
+.header {
+  height: 95vh;
+  /* At any time the header  HEIGHT should be visible 95% of the viewport.  */
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.6), rgba($color-primary-dark, 0.6)), url("../img/hero.jpg");
+  /* We always use background-image when we need a gradient.
+  The gradient will be on top being before url */
+  background-size: cover;
+  /* Whatever the width of vieport or the the element it will try to fit it */
+  background-position: top;
+  /* The top of the image stays the same when we change the viewport size */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+  /* We use vh to be more dynamic on viewport changes */
+  position: relative;
+
+  /* Logo */
+  &__logo-box {
+    left: 4rem;
+    position: absolute;
+    top: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+    /* We don`t specify the height of the element because height will automatically adjust it */
+  }
+
+  /* Header Title Box */
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* We use transform to correct the center position.
+    So absolute positioning with translate will keep element in the center */
+    text-align: center;
+    /* We use text align to center in order to center text elements like f e the button */
+  }
+
+  &-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    /* Removes (sometimes) animation unwanted shaking effect */
+    margin-bottom: 6rem;
+    /* ?????? */
+
+    &--main {
+      display: block;
+      /* We set display: block; because we want the headings to be displayed one beyound another */
+      font-size: 6rem;
+      font-weight: 400;
+      letter-spacing: 3.5rem;
+      margin-right: -3.5rem;
+      /* This margin is needed because letter-spacing property also adds that space AFTER the last letter. */
+      animation: moveInLeft 2.5s ease-out;
+      /* animation-timing-function: ease-out; */
+      /* animation-delay: 2s; */
+      /* animation-iteration-count: 3; */
+    }
+
+    &--sub {
+      animation: moveInRight 2.5s ease-out;
+      display: block;
+      /* We set display: block; because we want the headings to be displayed one beyound another */
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 17.53px;
+      margin-right: -17.53px;
+      /* This margin is needed because letter-spacing property also adds that space AFTER the last letter. */
+    }
+  }
+}

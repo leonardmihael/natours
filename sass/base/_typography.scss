@@ -1,0 +1,13 @@
+
+body {
+  /* Font Resets */
+  font-family: "Lato", sans-serif;
+  /* Intotdeauna punem fontul in body */
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 2rem;
+  /* Punem un padding in jurul intregului continut in pagina */
+  box-sizing: border-box;
+}

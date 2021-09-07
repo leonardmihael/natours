@@ -1,0 +1,14 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  // Defines what 1rem should be
+  font-size: 62.5%;
+  /* 16px = 100% > 10px = 62.5% */
+  /* We set the global font size in the html because REM is related to root sont size */
+}

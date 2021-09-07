@@ -1,0 +1,72 @@
+.btn {
+  /* Header Button */
+  &:link,
+  &:visited {
+    /* We always use :link and :visited pseudoclasses as a state of an element */
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    /* We should always display inline block in order to apply padding height width to elements */
+    border-radius: 10rem;
+    transition: all 0.2s;
+    /* All transitions (hover and active transforms) should be animated in .2s */
+    position: relative;
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: #fff;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    /* When hovered btn should slitly move up */
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    /* First value is in x direction, second in Y and third is the blur and last color (we put rgba because
+      we want transparency on color (.2)) */
+
+      &::after {
+        /* We want some properties for after only when we have the hover state */
+        transform: scaleX(1.5) scaleY(1.6);
+        opacity: 0;
+        /* this is how we make something fading out */
+      }
+
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    /* When pressed should slitly move down */
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    /* We set lower shadow values to create the illusion of pressed button */
+  }
+
+  /* Header Button Glowin Effect */
+  &::after {
+    content: "";
+    /* Always specify content in an 'after' element */
+    display: inline-block;
+    /* We specify display as i-b because the element btn is i-b */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10rem;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    animation: moveInBottom 1.75s ease-out 0.75s;
+    /* animation: NAME DURATION TIMING-FUNCTION DELAY */
+    animation-fill-mode: backwards;
+    /* ! Punem animatia invers deoarece se vedea butonul inainte de animatie*/
+  }
+}
